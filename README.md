@@ -62,7 +62,7 @@ The OceanGuard platform follows a comprehensive workflow from user input to emer
 
 ### Deep Learning Model Architecture
 
-![Model Architecture](docs/images/model_architecture.png)
+![Model Architecture](docs/images/model_architecture.jpg)
 
 #### Visual Encoder Pipeline
 - **Feature Extraction**: MobileNetV3-Small (pretrained, frozen backbone)
