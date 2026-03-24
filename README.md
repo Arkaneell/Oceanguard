@@ -293,7 +293,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact & Support
 
-**Project Maintainer**: [@Arkaneell](https://github.com/Arkaneell)  
+**Project Maintainer**: [Arkaneell](https://github.com/Arkaneell) ,[Arpita](https://github.com/arpita190105)  
 **Repository**: [https://github.com/Arkaneell/oceanguard](https://github.com/Arkaneell/oceanguard)
 
 ### Get Help
