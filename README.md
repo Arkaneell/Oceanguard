@@ -42,7 +42,7 @@ OceanGuard is a cutting-edge multi-modal machine learning system that combines c
 
 ### High-Level System Flow
 
-![System Architecture](https://raw.githubusercontent.com/Arkaneell/oceanguard/main/docs/images/system_architecture.png)
+![System Architecture](https://raw.githubusercontent.com/Arkaneell/oceanguard/main/docs/images/OCG(1).pdf)
 
 The OceanGuard platform follows a comprehensive workflow from user input to emergency notification:
 
