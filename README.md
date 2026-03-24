@@ -40,12 +40,51 @@ OceanGuard is a cutting-edge multi-modal machine learning system that combines c
 
 ## 🏗️ System Architecture
 
-```
-<img width="2012" height="824" alt="image" src="https://github.com/user-attachments/assets/1023d3bf-c6cd-4b2d-857a-9204bad5688a" />
+### High-Level System Flow
 
+![System Architecture](docs/images/system_architecture.png)
 
-* SeaBERT model currently in development
-```[OCG_ML.pdf](https://github.com/user-attachments/files/26203363/OCG_ML.pdf)
+The OceanGuard platform follows a comprehensive workflow from user input to emergency notification:
+
+1. **User Authentication & Dashboard**: Secure login system with personalized dashboard
+2. **Multi-Modal Input Processing**: 
+   - Image/Video upload for visual analysis
+   - Text description of the coastal situation
+   - Location data capture
+3. **Network Condition Check**: Determines data routing based on connectivity
+4. **Data Storage Strategy**:
+   - Strong connectivity → Direct to MongoDB (Model 1 & 2)
+   - Weak/No connectivity → Temporary storage with later sync
+5. **AI Processing Pipeline**: SeaBERT model analyzes combined inputs
+6. **Analytics & Visualization**: Real-time dashboard updates with map visuals and charts
+7. **Alert System**: Automated notifications for high-risk scenarios
+8. **Emergency Response**: Nearest hospital and health center location recommendations
+
+### Deep Learning Model Architecture
+
+![Model Architecture](docs/images/model_architecture.png)
+
+#### Visual Encoder Pipeline
+- **Feature Extraction**: MobileNetV3-Small (pretrained, frozen backbone)
+- **Pooling**: Global Average Pooling (576-dimensional output)
+- **Projection**: Linear layer with Batch Normalization and ReLU (576 → 256)
+- **Temporal Aggregation**: Mean/Max/Attention mechanisms for video frame sequences
+
+#### Text Encoder Pipeline
+- **Language Model**: BERT/DistilBERT (pretrained, frozen)
+- **Token Extraction**: [CLS] token embedding (768-dimensional)
+- **Projection**: Linear layer with Batch Normalization and ReLU (768 → 256)
+
+#### Cross-Modal Fusion
+- **Attention Mechanism**: Multi-head attention for text-guided visual reasoning
+- **Feature Dimension**: 256-dimensional unified representation
+- **Fusion Strategy**: Cross-attention from text to visual features
+
+#### Severity Classification Head
+- **Output Layer**: Linear classifier (256 → 3 classes)
+- **Risk Categories**: Low, Medium, High severity levels
+- **Loss Function**: Cross-entropy loss for multi-class classification
+
 ---
 
 ## 🚀 Getting Started
@@ -279,7 +318,16 @@ Together, we can build safer coastal communities through intelligent technology.
 
 ## 📸 Screenshots
 
-*Coming soon as features are finalized*
+### System Architecture
+![OceanGuard System Flow](docs/images/system_architecture.png)
+*Complete system workflow from user input to emergency alert*
+
+### Model Architecture
+![Deep Learning Pipeline](docs/images/model_architecture.png)
+*Multi-modal fusion architecture with visual and text encoders*
+
+### Dashboard Preview
+*Coming soon - UI screenshots will be added as features are finalized*
 
 ---
 
