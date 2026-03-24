@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OceanGuard | Pricing & Subscriptions</title>
+    <meta name="description" content="OceanGuard flexible pricing plans — SaaS subscriptions, government contracts, and API-as-a-Service for coastal disaster intelligence at scale." />
+
+    <!-- Fonts — Syne (display) + DM Sans (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="subscription.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════ -->
+<header class="navbar" id="navbar">
+    <div class="nav-inner">
+        <a href="index.html" class="logo">🌊 OceanGuard</a>
+        <nav class="nav-links-wrap">
+            <ul class="nav-links">
+                <li><a href="#saas">Plans</a></li>
+                <li><a href="#government">Enterprise</a></li>
+                <li><a href="#api">API</a></li>
+                <li><a href="#comparison">Compare</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+        <div class="nav-cta-group">
+            
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        </div>
+    </div>
+</header>
+
+<!-- ═══════════════════════════════════════
+     §1 HERO
+═══════════════════════════════════════ -->
+<section class="hero" id="home">
+    <!-- Background grid + orbs rendered via CSS/pseudo -->
+    <div class="hero-grid-overlay" aria-hidden="true"></div>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+    <div class="orb orb-3" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+        <span class="eyebrow">Pricing & Plans</span>
+        <h1>Flexible Pricing for<br/><span class="gradient-text">Coastal Intelligence at Scale</span></h1>
+        <p class="hero-sub">
+            From early-stage startups to national governments — OceanGuard
+            scales to your operational needs with transparent, mission-driven pricing.
+        </p>
+
+        <!-- Billing Toggle -->
+        <div class="billing-toggle" id="billingToggle" role="group" aria-label="Billing cycle">
+            <button class="toggle-opt active" data-cycle="monthly" id="toggleMonthly">Monthly</button>
+            <div class="toggle-track" id="toggleTrack" aria-checked="false" role="switch" tabindex="0">
+                <div class="toggle-thumb"></div>
+            </div>
+            <button class="toggle-opt" data-cycle="annual" id="toggleAnnual">
+                Annual
+                <span class="discount-badge">−20%</span>
+            </button>
+        </div>
+
+        <div class="hero-actions" id="hero-cta">
+            <a href="#saas" class="btn btn-primary btn-lg">Get Started <span class="btn-arrow">→</span></a>
+           
+        </div>
+
+        <!-- Quick stats 
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-num">500+</span>
+                <span class="stat-label">Deployments</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">99.9%</span>
+                <span class="stat-label">Uptime SLA</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num">18 States</span>
+                <span class="stat-label">Gov Partners</span>
+            </div>
+        </div>-->
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     §2 SAAS PRICING
+═══════════════════════════════════════ -->
+<section class="section saas-section" id="saas">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">SaaS Subscriptions</span>
+            <h2>Choose Your Monitoring Plan</h2>
+            <p>Full-stack coastal risk intelligence, deployable in under 24 hours.</p>
+        </div>
+
+        <div class="pricing-grid stagger">
+
+            <!-- Basic -->
+            <article class="pricing-card" data-plan="basic">
+                <div class="card-glow" aria-hidden="true"></div>
+                <div class="plan-top">
+                    <div class="plan-icon">🌐</div>
+                    <h3 class="plan-name">Basic</h3>
+                    <p class="plan-desc">Perfect for startups and research teams.</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">₹</span>
+                    <span class="amount" data-monthly="9,999" data-annual="7,999">9,999</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="feature-list">
+                    <li class="feat"><span class="feat-icon">✓</span> Limited Zone Monitoring</li>
+                    <li class="feat"><span class="feat-icon">✓</span> Daily Risk Reports</li>
+                    <li class="feat"><span class="feat-icon">✓</span> Email Alerts</li>
+                    <li class="feat"><span class="feat-icon">✓</span> 3 User Seats</li>
+                    <li class="feat feat-off"><span class="feat-icon">✗</span> API Access</li>
+                    <li class="feat feat-off"><span class="feat-icon">✗</span> Historical Analytics</li>
+                    <li class="feat feat-off"><span class="feat-icon">✗</span> Custom AI Models</li>
+                </ul>
+                <a href="#" class="btn btn-outline btn-block">Get Started</a>
+            </article>
+
+            <!-- Professional — MOST POPULAR -->
+            <article class="pricing-card card-featured" data-plan="professional">
+                <div class="card-glow" aria-hidden="true"></div>
+                <div class="popular-badge">Most Popular</div>
+                <div class="plan-top">
+                    <div class="plan-icon">⚡</div>
+                    <h3 class="plan-name">Professional</h3>
+                    <p class="plan-desc">Built for NGOs, port authorities, and city planners.</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">₹</span>
+                    <span class="amount" data-monthly="29,999" data-annual="23,999">29,999</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="feature-list">
+                    <li class="feat"><span class="feat-icon">✓</span> Real-Time Monitoring</li>
+                    <li class="feat"><span class="feat-icon">✓</span> Hourly Risk Reports</li>
+                    <li class="feat"><span class="feat-icon">✓</span> SMS &amp; Email Alerts</li>
+                    <li class="feat"><span class="feat-icon">✓</span> 15 User Seats</li>
+                    <li class="feat"><span class="feat-icon">✓</span> Basic API Access</li>
+                    <li class="feat"><span class="feat-icon">✓</span> Historical Analytics</li>
+                    <li class="feat feat-off"><span class="feat-icon">✗</span> Custom AI Models</li>
+                </ul>
+                <a href="#" class="btn btn-primary btn-block">Get Started</a>
+            </article>
+
+            <!-- Enterprise SaaS -->
+            <article class="pricing-card" data-plan="enterprise">
+                <div class="card-glow" aria-hidden="true"></div>
+                <div class="plan-top">
+                    <div class="plan-icon">🛡️</div>
+                    <h3 class="plan-name">Enterprise SaaS</h3>
+                    <p class="plan-desc">For large institutions and multi-region deployments.</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">₹</span>
+                    <span class="amount" data-monthly="79,999" data-annual="63,999">79,999</span>
+                    <span class="period">/month</span>
+                </div>
+                <ul class="feature-list">
+                    <li class="feat"><span class="feat-icon">✓</span> Unlimited Zone Monitoring</li>
+                    <li class="feat"><span class="feat-icon">✓</span> Real-Time &amp; Predictive Reports</li>
+                    <li class="feat"><span class="feat-icon">✓</span> SMS, Email &amp; Push Alerts</li>
+                    <li class="feat"><span class="feat-icon">✓</span> Unlimited User Seats</li>
+                    <li class="feat"><span class="feat-icon">✓</span> Full API Access</li>
+                    <li class="feat"><span class="feat-icon">✓</span> Historical Analytics</li>
+                    <li class="feat"><span class="feat-icon">✓</span> Custom AI Models + SLA</li>
+                </ul>
+                <a href="contact.html" class="btn btn-outline btn-block">Contact Sales</a>
+            </article>
+
+        </div><!-- /.pricing-grid -->
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     §3 GOVERNMENT & ENTERPRISE CONTRACTS
+═══════════════════════════════════════ -->
+<section class="section gov-section" id="government">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Government &amp; Enterprise Contracts</span>
+            <h2>Built for National-Scale Operations</h2>
+            <p>Structured contract options for state agencies, municipal bodies, and large enterprises requiring dedicated deployment and compliance.</p>
+        </div>
+
+        <div class="gov-grid stagger">
+
+            <article class="gov-card">
+                <div class="gov-card-accent" aria-hidden="true"></div>
+                <div class="gov-icon">🏛️</div>
+                <h3>Annual State-Level Dashboard License</h3>
+                <div class="gov-price-range">₹50 – 80 Lakhs <span>/year</span></div>
+                <p>Full-state coastal monitoring with dedicated infrastructure, multi-district dashboards, and 24×7 SLA-backed support. Includes onboarding, training, and quarterly reviews.</p>
+                <ul class="gov-features">
+                    <li>State-wide sensor integration</li>
+                    <li>Custom branded dashboard</li>
+                    <li>24×7 Priority SLA</li>
+                    <li>Quarterly strategy reviews</li>
+                    <li>Compliance reporting (NDMA ready)</li>
+                </ul>
+                <a href="#final-cta" class="btn btn-gov">Request Proposal <span class="btn-arrow">→</span></a>
+            </article>
+
+            <article class="gov-card">
+                <div class="gov-card-accent" aria-hidden="true"></div>
+                <div class="gov-icon">🏙️</div>
+                <h3>City-Level Deployment</h3>
+                <div class="gov-price-range">₹15 – 30 Lakhs <span>/year</span></div>
+                <p>Municipal-level coastal risk platform for city administrations and port authorities. Real-time alerts, integrated with civic emergency response systems.</p>
+                <ul class="gov-features">
+                    <li>City-zone risk mapping</li>
+                    <li>Integration with civic systems</li>
+                    <li>Emergency alert broadcasting</li>
+                    <li>Annual model retraining</li>
+                    <li>Dedicated account manager</li>
+                </ul>
+                <a href="#final-cta" class="btn btn-gov">Request Proposal <span class="btn-arrow">→</span></a>
+            </article>
+
+            <article class="gov-card">
+                <div class="gov-card-accent" aria-hidden="true"></div>
+                <div class="gov-icon">🤖</div>
+                <h3>Custom AI Model Integration</h3>
+                <div class="gov-price-range">₹10 – 25 Lakhs <span class="one-time">one-time</span></div>
+                <p>Enterprise-grade custom AI model trained on your regional coastal data. Includes full IP transfer, integration support, and a 12-month maintenance contract.</p>
+                <ul class="gov-features">
+                    <li>Proprietary model training</li>
+                    <li>Full source code delivery</li>
+                    <li>On-premises deployment option</li>
+                    <li>12-month maintenance included</li>
+                    <li>Team training &amp; documentation</li>
+                </ul>
+                <a href="#final-cta" class="btn btn-gov">Request Proposal <span class="btn-arrow">→</span></a>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     §4 API-AS-A-SERVICE
+═══════════════════════════════════════ -->
+<section class="section api-section" id="api">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">API-as-a-Service</span>
+            <h2>Integrate Coastal Intelligence into Your Stack</h2>
+            <p>RESTful API with real-time endpoints, webhook support, and SDKs for Python, Node.js, and Go.</p>
+        </div>
+
+        <div class="api-grid stagger">
+
+            <article class="api-card">
+                <div class="api-tier-label">Basic Tier</div>
+                <div class="api-price">
+                    <span class="api-amount">₹5</span>
+                    <span class="api-unit">per 1,000 API calls</span>
+                </div>
+                <p class="api-desc">Ideal for developers and small applications with moderate request volumes.</p>
+                <ul class="api-features">
+                    <li><span>✓</span> Basic Risk Predictions</li>
+                    <li><span>✓</span> 1,000 req/day rate limit</li>
+                    <li><span>✓</span> JSON &amp; GeoJSON responses</li>
+                    <li><span>✓</span> Community support</li>
+                    <li><span class="off">✗</span> Webhook support</li>
+                    <li><span class="off">✗</span> High-concurrency routing</li>
+                </ul>
+                <div class="api-actions">
+                    <a href="#" class="btn btn-primary">Get API Key</a>
+                    <a href="#" class="btn btn-ghost-sm">View Docs</a>
+                </div>
+            </article>
+
+            <article class="api-card api-card-mid">
+                <div class="api-tier-label">High Volume Tier</div>
+                <div class="api-price">
+                    <span class="api-amount">₹3</span>
+                    <span class="api-unit">per 1,000 API calls</span>
+                </div>
+                <p class="api-desc">For production applications requiring high throughput and priority routing.</p>
+                <ul class="api-features">
+                    <li><span>✓</span> Advanced Predictions</li>
+                    <li><span>✓</span> 50,000 req/day rate limit</li>
+                    <li><span>✓</span> JSON, GeoJSON, CSV</li>
+                    <li><span>✓</span> Priority support</li>
+                    <li><span>✓</span> Webhook support</li>
+                    <li><span>✓</span> High-concurrency routing</li>
+                </ul>
+                <div class="api-actions">
+                    <a href="#" class="btn btn-primary">Get API Key</a>
+                    <a href="#" class="btn btn-ghost-sm">View Docs</a>
+                </div>
+            </article>
+
+            <article class="api-card">
+                <div class="api-tier-label">Custom Enterprise</div>
+                <div class="api-price">
+                    <span class="api-amount api-inr">₹2–10L</span>
+                    <span class="api-unit">per year</span>
+                </div>
+                <p class="api-desc">White-label API with custom models, private infrastructure, and guaranteed SLA.</p>
+                <ul class="api-features">
+                    <li><span>✓</span> Custom AI Models</li>
+                    <li><span>✓</span> Unlimited API calls</li>
+                    <li><span>✓</span> All output formats</li>
+                    <li><span>✓</span> 24×7 SLA support</li>
+                    <li><span>✓</span> Private infrastructure</li>
+                    <li><span>✓</span> White-label endpoints</li>
+                </ul>
+                <div class="api-actions">
+                    <a href="#final-cta" class="btn btn-primary">Talk to Sales</a>
+                    <a href="#" class="btn btn-ghost-sm">View Docs</a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     §5 COMPARISON TABLE
+═══════════════════════════════════════ -->
+<section class="section compare-section" id="comparison">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Plan Comparison</span>
+            <h2>Feature-by-Feature Breakdown</h2>
+            <p>See exactly what's included across every subscription tier.</p>
+        </div>
+
+        <div class="table-wrap reveal">
+            <table class="compare-table" role="table" aria-label="Plan comparison table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="feature-col">Feature</th>
+                        <th scope="col">Basic</th>
+                        <th scope="col" class="col-featured">Professional</th>
+                        <th scope="col">Enterprise</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name">Monitoring Coverage</td>
+                        <td>Limited zones</td>
+                        <td class="col-featured">Multi-zone</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr class="row-alt">
+                        <td class="feature-name">Risk Reports</td>
+                        <td>Daily</td>
+                        <td class="col-featured">Hourly</td>
+                        <td>Real-time + Predictive</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Alert Channels</td>
+                        <td>Email only</td>
+                        <td class="col-featured">SMS + Email</td>
+                        <td>SMS, Email, Push, Webhook</td>
+                    </tr>
+                    <tr class="row-alt">
+                        <td class="feature-name">API Access</td>
+                        <td class="cell-no">✗</td>
+                        <td class="col-featured">Basic</td>
+                        <td>Full + Custom</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Historical Analytics</td>
+                        <td class="cell-no">✗</td>
+                        <td class="col-featured cell-yes">✓</td>
+                        <td class="cell-yes">✓</td>
+                    </tr>
+                    <tr class="row-alt">
+                        <td class="feature-name">Custom AI Models</td>
+                        <td class="cell-no">✗</td>
+                        <td class="col-featured cell-no">✗</td>
+                        <td class="cell-yes">✓</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">User Seats</td>
+                        <td>3</td>
+                        <td class="col-featured">15</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr class="row-alt">
+                        <td class="feature-name">Support</td>
+                        <td>Email (48h)</td>
+                        <td class="col-featured">Priority (4h)</td>
+                        <td>24×7 Dedicated SLA</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">SLA Guarantee</td>
+                        <td class="cell-no">✗</td>
+                        <td class="col-featured cell-no">✗</td>
+                        <td class="cell-yes">99.9%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     §6 ROI / VALUE
+═══════════════════════════════════════ -->
+<section class="section roi-section" id="roi">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">Return on Investment</span>
+            <h2>Why OceanGuard Saves Millions</h2>
+            <p>The cost of inaction far exceeds the cost of intelligence. Here's the math.</p>
+        </div>
+
+        <div class="roi-grid stagger">
+
+            <div class="roi-card">
+                <div class="roi-number">₹850Cr+</div>
+                <div class="roi-icon">🌊</div>
+                <h3>Flood Damage Reduction</h3>
+                <p>Early detection windows of 12–72 hours allow timely infrastructure protection, reducing flood-related property damage by up to 60% in monitored zones.</p>
+            </div>
+
+            <div class="roi-card">
+                <div class="roi-number">3× faster</div>
+                <div class="roi-icon">🚨</div>
+                <h3>Evacuation Response</h3>
+                <p>Real-time AI alerts integrate with district emergency systems, enabling evacuation planning 3× faster than manual monitoring processes, saving lives at scale.</p>
+            </div>
+
+            <div class="roi-card">
+                <div class="roi-number">40% less</div>
+                <div class="roi-icon">🏗️</div>
+                <h3>Infrastructure Loss</h3>
+                <p>Predictive wave surge modeling prevents infrastructure damage to roads, bridges, and coastal utilities — reducing annual repair budgets by an average of 40%.</p>
+            </div>
+
+        </div>
+
+        <div class="roi-banner reveal">
+            <span class="roi-banner-icon">📊</span>
+            <p>Every ₹1 invested in OceanGuard monitoring returns an estimated <strong>₹12–18</strong> in avoided disaster costs — validated across 18 state deployments.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     §7 FAQ
+═══════════════════════════════════════ -->
+<section class="section faq-section" id="faq">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-label">FAQ</span>
+            <h2>Common Questions</h2>
+            <p>Everything you need to know before getting started.</p>
+        </div>
+
+        <div class="faq-list reveal" id="faqList" role="list">
+
+            <div class="faq-item" role="listitem">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+                    <span>Can I upgrade or downgrade my plan anytime?</span>
+                    <span class="faq-chevron" aria-hidden="true">▾</span>
+                </button>
+                <div class="faq-answer" id="faq-1" role="region" hidden>
+                    <p>Yes. You can upgrade or downgrade your SaaS plan at any time from your dashboard. Upgrades take effect immediately with prorated billing. Downgrades apply at the next billing cycle. Government contract modifications require written notice and are handled by your account manager.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+                    <span>How is my data protected?</span>
+                    <span class="faq-chevron" aria-hidden="true">▾</span>
+                </button>
+                <div class="faq-answer" id="faq-2" role="region" hidden>
+                    <p>OceanGuard is ISO 27001 compliant and SOC 2 Type II certified. All data is encrypted in transit (TLS 1.3) and at rest (AES-256). We operate on MEITY-approved cloud infrastructure within Indian data centres. Enterprise clients may opt for dedicated tenancy or on-premises deployment.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+                    <span>Do you provide onboarding and training?</span>
+                    <span class="faq-chevron" aria-hidden="true">▾</span>
+                </button>
+                <div class="faq-answer" id="faq-3" role="region" hidden>
+                    <p>All Professional and Enterprise plans include a dedicated onboarding session. Government contracts include structured training programmes for field teams, operations staff, and administrators. We also provide a comprehensive documentation portal, video tutorials, and a sandbox environment for testing.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+                    <span>What SLA does OceanGuard guarantee?</span>
+                    <span class="faq-chevron" aria-hidden="true">▾</span>
+                </button>
+                <div class="faq-answer" id="faq-4" role="region" hidden>
+                    <p>Enterprise SaaS and Government contract clients receive a 99.9% uptime SLA with defined response times: P1 incidents within 1 hour, P2 within 4 hours. SLA credits apply automatically for any breach. Our platform is monitored 24×7 by a dedicated operations team with global redundancy failover.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+                    <span>Can OceanGuard integrate with our existing systems?</span>
+                    <span class="faq-chevron" aria-hidden="true">▾</span>
+                </button>
+                <div class="faq-answer" id="faq-5" role="region" hidden>
+                    <p>Absolutely. OceanGuard provides a RESTful API, Webhook support, and ready-made connectors for GIS platforms (ArcGIS, QGIS), civic emergency systems, and IoT sensor networks. Enterprise clients receive dedicated integration engineering support. We also support bulk data import from legacy monitoring systems.</p>
+                </div>
+            </div>
+
+            
+
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     §8 FINAL CTA
+═══════════════════════════════════════ -->
+<section class="final-cta" id="final-cta">
+    <div class="cta-orb cta-orb-1" aria-hidden="true"></div>
+    <div class="cta-orb cta-orb-2" aria-hidden="true"></div>
+    <div class="container">
+        <div class="cta-inner reveal">
+            <span class="eyebrow">Get Started Today</span>
+            <h2>Ready to Secure Your Coastline?</h2>
+            <p>Join 500+ organisations already protecting lives and infrastructure with OceanGuard AI monitoring.</p>
+            <div class="cta-actions">
+                <a href="#" class="btn btn-primary btn-lg"> start today <span class="btn-arrow">→</span></a>
+                <a href="mailto:sales@oceanguard.ai" class="btn btn-outline btn-lg">Talk to Sales</a>
+            </div>
+            <p class="cta-note">Avoid the risks of unmonitored coastal environments with OceanGuard AI.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-brand">
+            <a href="index.html" class="logo">🌊 OceanGuard</a>
+            <p>AI-powered coastal disaster monitoring for a safer world.</p>
+        </div>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">API Docs</a>
+            <a href="mailto:aipowerocean@gmail.com">Contact</a>
+        </div>
+        <p class="footer-copy">© 2026 OceanGuard Technologies Pvt. Ltd. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="subscription.js"></script>
+</body>
+</html>

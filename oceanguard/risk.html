@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OceanGuard | Risk Analyzer</title>
+    <meta name="description" content="OceanGuard AI Coastal Risk Analyzer — upload images and reports to get an instant disaster risk score." />
+
+    <!-- Fonts — same as home page -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="risk.css" />
+</head>
+<body>
+
+<!-- ===== NAVBAR — matches oceanguard.html navbar exactly ===== -->
+<header class="navbar">
+    <div class="nav-inner">
+        <a href="oceanguard.html" class="logo">🌊 OceanGuard</a>
+        <div class="nav-right">
+            <span class="nav-tag">Risk Analyzer</span>
+            <a href="index.html" class="nav-back">← Back to Home</a>
+        </div>
+    </div>
+</header>
+
+<!-- ===== PAGE WRAPPER ===== -->
+<main class="analyzer-wrapper">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+        <span class="section-label">AI-Powered Assessment</span>
+        <h1>Coastal Risk <span class="gradient-text">Analyzer</span></h1>
+        <p>Upload an image, describe conditions, and pinpoint a location to receive an instant AI-generated risk score.</p>
+    </div>
+
+    <!-- ===== MAIN GRID ===== -->
+    <div class="analyzer-grid">
+
+        <!-- ─── LEFT PANEL: INPUT ─── -->
+        <section class="panel input-panel">
+            <div class="panel-header">
+                <span class="panel-icon">📥</span>
+                <h2>Input Data</h2>
+            </div>
+
+            <!-- IMAGE UPLOAD -->
+            <div class="form-group">
+                <label class="form-label">Coastal Image</label>
+                <div class="upload-zone" id="uploadZone">
+                    <input type="file" id="imageInput" accept="image/*" hidden />
+                    <div class="upload-placeholder" id="uploadPlaceholder">
+                        <div class="upload-icon">🖼️</div>
+                        <p>Drag &amp; drop or <span class="upload-link">browse</span></p>
+                        <span class="upload-hint">JPG, PNG — up to 10 MB</span>
+                    </div>
+                    <img id="imagePreview" src="" alt="Preview" class="image-preview hidden" />
+                    <button class="remove-img hidden" id="removeImg" title="Remove image">✕</button>
+                </div>
+            </div>
+
+            <!-- TEXT DESCRIPTION -->
+            <div class="form-group">
+                <label class="form-label" for="descInput">Sea Condition Report</label>
+                <textarea
+                    id="descInput"
+                    class="form-textarea"
+                    rows="4"
+                    placeholder="Describe observed conditions — wave height, storm surge, flood extent, debris, wind speed…"
+                ></textarea>
+                <span class="char-count" id="charCount">0 / 600</span>
+            </div>
+
+            <!-- LOCATION -->
+            <div class="form-group">
+                <label class="form-label">Location</label>
+
+                <button class="geo-btn" id="geoBtn">
+                    <span class="geo-icon">📍</span>
+                    <span id="geoBtnText">Use My Current Location</span>
+                </button>
+
+                <div class="divider-row"><span>or search manually</span></div>
+
+                <div class="search-wrap">
+                    <input
+                        type="text"
+                        id="locationSearch"
+                        class="form-input"
+                        placeholder="Search city, coastline, region…"
+                        autocomplete="off"
+                    />
+                    <div class="suggestions-box hidden" id="suggestionsBox"></div>
+                </div>
+
+                <div class="location-chip hidden" id="locationChip">
+                    <span class="chip-icon">📍</span>
+                    <span id="chipText">—</span>
+                    <button class="chip-clear" id="chipClear">✕</button>
+                </div>
+            </div>
+
+            <!-- ANALYZE BUTTON -->
+            <button class="analyze-btn" id="analyzeBtn" disabled>
+                <span class="btn-text">Analyze Risk</span>
+                <span class="btn-spinner hidden" id="btnSpinner"></span>
+                <span class="btn-arrow">→</span>
+            </button>
+
+            <p class="disclaimer">⚠ AI-simulated assessment only. Not a substitute for official emergency services.</p>
+        </section>
+
+        <!-- ─── CENTER: MAP ─── -->
+        <section class="panel map-panel">
+            <div class="panel-header">
+                <span class="panel-icon">🗺️</span>
+                <h2>Impact Zone Map</h2>
+                <span class="map-badge" id="mapBadge">Awaiting Location</span>
+            </div>
+            <div id="map"></div>
+            <div class="map-legend">
+                <span class="legend-dot low"></span>Low (2 km)
+                <span class="legend-dot moderate"></span>Moderate (5 km)
+                <span class="legend-dot high"></span>High (10 km)
+                <span class="legend-dot critical"></span>Critical (20 km)
+            </div>
+        </section>
+
+        <!-- ─── RIGHT PANEL: OUTPUT ─── -->
+        <section class="panel output-panel" id="outputPanel">
+            <div class="panel-header">
+                <span class="panel-icon">📊</span>
+                <h2>Risk Assessment</h2>
+            </div>
+
+            <!-- IDLE STATE -->
+            <div class="output-idle" id="outputIdle">
+                <div class="idle-icon">🔍</div>
+                <p>Submit data to view your<br/>risk assessment report.</p>
+            </div>
+
+            <!-- RESULT STATE -->
+            <div class="output-result hidden" id="outputResult">
+
+                <!-- Score Ring -->
+                <div class="score-ring-wrap">
+                    <svg class="score-ring" viewBox="0 0 160 160">
+                        <circle class="ring-bg"   cx="80" cy="80" r="66" />
+                        <circle class="ring-fill" id="ringFill" cx="80" cy="80" r="66"
+                            stroke-dasharray="414.69"
+                            stroke-dashoffset="414.69" />
+                    </svg>
+                    <div class="score-center">
+                        <span class="score-number" id="scoreNumber">0</span>
+                        <span class="score-denom">/100</span>
+                        <span class="score-label">Risk Score</span>
+                    </div>
+                </div>
+
+                <!-- Badge -->
+                <div class="risk-badge-wrap">
+                    <span class="risk-badge" id="riskBadge">—</span>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-section">
+                    <div class="progress-label-row">
+                        <span>Threat Level</span>
+                        <span id="progressPct">0%</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <!-- Interpretation -->
+                <div class="interpretation-box" id="interpretationBox">
+                    <p id="interpretationText"></p>
+                </div>
+
+                <!-- Impact Zone Info -->
+                <div class="zone-info" id="zoneInfo">
+                    <span class="zone-icon">🎯</span>
+                    <span id="zoneText">—</span>
+                </div>
+
+                <!-- Reset -->
+                <button class="reset-btn" id="resetBtn">Run New Analysis</button>
+            </div>
+        </section>
+
+    </div><!-- /.analyzer-grid -->
+</main>
+
+<!-- FOOTER — matches home footer -->
+<footer class="page-footer">
+    <div class="container">
+        <p>© 2026 OceanGuard · AI Coastal Risk Monitoring · Powered by <a href="https://leafletjs.com" target="_blank">Leaflet</a> &amp; <a href="https://www.openstreetmap.org" target="_blank">OpenStreetMap</a></p>
+    </div>
+</footer>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- Page JS -->
+<script src="risk.js"></script>
+</body>
+</html>
