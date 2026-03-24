@@ -1,0 +1,13 @@
+# node modules
+node_modules/
+
+# env files
+.env
+serviceAccountKey.json
+
+
+# logs
+*.log
+
+# build folder
+dist/
