@@ -160,7 +160,7 @@ The application will be available at `http://localhost:5000`
 ## 🧠 Technical Details
 
 ### Computer Vision Module
-- **Architecture**: Convolutional Neural Network (CNN)
+- **Architecture**:  MobileNetV3-Small
 - **Input Processing**: Image preprocessing, normalization, augmentation
 - **Feature Detection**: 
   - Wave pattern recognition
@@ -169,7 +169,7 @@ The application will be available at `http://localhost:5000`
   - Weather condition indicators
 
 ### Natural Language Processing Module
-- **Model**: SeaBERT (Specialized BERT variant) - *Currently in Development*
+- **Model**: SeaBERT (Specialized BERT variant using DistilBERT backbone) - *Currently in Development*
 - **Capabilities**:
   - Disaster-related entity recognition
   - Urgency classification
