@@ -41,55 +41,11 @@ OceanGuard is a cutting-edge multi-modal machine learning system that combines c
 ## 🏗️ System Architecture
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    User Interface Layer                  │
-│              (Web Dashboard + Mobile Support)            │
-└─────────────────────┬───────────────────────────────────┘
-                      │
-┌─────────────────────┴───────────────────────────────────┐
-│                  Input Processing Layer                  │
-├──────────────────────────┬──────────────────────────────┤
-│   Image Upload Module    │   Text Report Module         │
-└──────────┬───────────────┴────────────┬─────────────────┘
-           │                            │
-┌──────────┴────────────┐  ┌───────────┴─────────────────┐
-│   Computer Vision     │  │  Natural Language           │
-│   (CNN-based Model)   │  │  Processing (SeaBERT*)      │
-│                       │  │                             │
-│  • Wave Detection     │  │  • Urgency Analysis         │
-│  • Water Level        │  │  • Sentiment Extraction     │
-│  • Flood Indicators   │  │  • Disaster Keywords        │
-└──────────┬────────────┘  └───────────┬─────────────────┘
-           │                            │
-           └────────────┬───────────────┘
-                        │
-           ┌────────────┴─────────────────┐
-           │   Cross-Modal Fusion Module  │
-           │                              │
-           │  • Feature Integration       │
-           │  • Contradiction Detection   │
-           │  • Unified Risk Scoring      │
-           └────────────┬─────────────────┘
-                        │
-           ┌────────────┴─────────────────┐
-           │   Risk Assessment Engine     │
-           │                              │
-           │  • Wave Severity Score       │
-           │  • Flood Probability         │
-           │  • Overall Risk Class        │
-           └────────────┬─────────────────┘
-                        │
-           ┌────────────┴─────────────────┐
-           │   Alert & Visualization      │
-           │                              │
-           │  • Dashboard Updates         │
-           │  • Alert Triggers            │
-           │  • Report Generation         │
-           └──────────────────────────────┘
+<img width="2012" height="824" alt="image" src="https://github.com/user-attachments/assets/1023d3bf-c6cd-4b2d-857a-9204bad5688a" />
+
 
 * SeaBERT model currently in development
-```
-
+```[OCG_ML.pdf](https://github.com/user-attachments/files/26203363/OCG_ML.pdf)
 ---
 
 ## 🚀 Getting Started
