@@ -42,7 +42,7 @@ OceanGuard is a cutting-edge multi-modal machine learning system that combines c
 
 ### High-Level System Flow
 
-![System Architecture](docs/images/OCG(1).png)
+![System Architecture](https://raw.githubusercontent.com/Arkaneell/oceanguard/main/docs/images/system_architecture.png)
 
 The OceanGuard platform follows a comprehensive workflow from user input to emergency notification:
 
@@ -62,7 +62,7 @@ The OceanGuard platform follows a comprehensive workflow from user input to emer
 
 ### Deep Learning Model Architecture
 
-![Model Architecture](docs/images/OCG_ML.pdf)
+![Model Architecture](https://raw.githubusercontent.com/Arkaneell/oceanguard/main/docs/images/model_architecture.png)
 
 #### Visual Encoder Pipeline
 - **Feature Extraction**: MobileNetV3-Small (pretrained, frozen backbone)
@@ -319,11 +319,11 @@ Together, we can build safer coastal communities through intelligent technology.
 ## 📸 Screenshots
 
 ### System Architecture
-![OceanGuard System Flow](docs/images/system_architecture.png)
+![OceanGuard System Flow](https://raw.githubusercontent.com/Arkaneell/oceanguard/main/docs/images/system_architecture.png)
 *Complete system workflow from user input to emergency alert*
 
 ### Model Architecture
-![Deep Learning Pipeline](docs/images/model_architecture.png)
+![Deep Learning Pipeline](https://raw.githubusercontent.com/Arkaneell/oceanguard/main/docs/images/model_architecture.png)
 *Multi-modal fusion architecture with visual and text encoders*
 
 ### Dashboard Preview
