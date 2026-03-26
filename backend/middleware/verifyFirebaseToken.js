@@ -1,7 +1,15 @@
 const admin = require('firebase-admin');
 
-const serviceAccount = require('../serviceAccountKey.json');
+// 🔐 Load Base64 encoded credentials from env
+const encoded = process.env.GOOGLE_CREDS_B64;
 
+// Decode Base64 → JSON
+const decoded = Buffer.from(encoded, 'base64').toString('utf-8');
+
+// Parse JSON
+const serviceAccount = JSON.parse(decoded);
+
+// Initialize Firebase Admin
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
@@ -21,10 +29,10 @@ module.exports = async (req, res, next) => {
         const token = header.split("Bearer ")[1];
         console.log("Extracted Token:", token.substring(0, 20), "...");
 
-        const decoded = await admin.auth().verifyIdToken(token);
-        console.log("Decoded Firebase User:", decoded);
+        const decodedUser = await admin.auth().verifyIdToken(token);
+        console.log("Decoded Firebase User:", decodedUser);
 
-        req.user = decoded;
+        req.user = decodedUser;
         next();
 
     } catch (error) {
