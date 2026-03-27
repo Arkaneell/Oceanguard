@@ -64,7 +64,7 @@ verifyOtpBtn.addEventListener("click", async () => {
 
 /* Send Token to Backend */
 async function sendTokenToBackend(idToken) {
-    const res = await fetch("http://localhost:5000/api/auth/verify", {
+    const res = await fetch("https://oceanguard-jjos.onrender.com/api/auth/verify", {
         method: "POST",
         headers: {
             Authorization: `Bearer ${idToken}`

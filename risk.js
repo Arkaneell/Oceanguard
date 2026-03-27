@@ -439,7 +439,7 @@ async function analyzeWithBackend() {
     formData.append('lng', selectedLocation.lng);
     formData.append('label', selectedLocation.label);
 
-    const response = await fetch('http://localhost:5000/api/risks', {
+    const response = await fetch('https://oceanguard-jjos.onrender.com/api/risks', {
         method: 'POST',
         body: formData
     });

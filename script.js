@@ -75,7 +75,7 @@ onAuthStateChanged(auth, async (user) => {
     try {
         const idToken = await user.getIdToken();
 
-        const res = await fetch("http://localhost:5000/api/auth/me", {
+        const res = await fetch("https://oceanguard-jjos.onrender.com/api/auth/me", {
             headers: {
                 Authorization: `Bearer ${idToken}`
             }
