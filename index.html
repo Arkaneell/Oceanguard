@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <title>OceanGuard | AI Coastal Risk Monitoring</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OceanGuard - AI-powered coastal disaster risk monitoring platform. Analyze coastal images and sea condition reports to detect flood and wave threats.">
+    <meta name="description" content="OceanGuard - AI-powered coastal disaster risk monitoring platform.">
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
@@ -25,70 +23,64 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
 
-            <!-- Profile Dropdown Container -->
-            <li class="profile-container" id="profileContainer">
-                <button class="profile-btn" id="profileBtn" title="View your profile">
-                    <img id="headerProfileImage" class="profile-avatar-img" src="" alt="Profile" style="display: none;">
+            <!-- Profile -->
+            <li class="profile-container">
+                <button class="profile-btn" id="profileBtn">
+                    <img id="headerProfileImage" class="profile-avatar-img" style="display:none;">
                     <span class="profile-avatar" id="profileAvatar">👤</span>
                 </button>
 
-                <!-- Profile Dropdown -->
                 <div class="profile-dropdown" id="profileDropdown">
 
                     <!-- HEADER -->
                     <div class="dropdown-header">
                         <div class="image-wrapper">
-                            <img id="profileImage" class="dropdown-avatar" src="" alt="Profile">
-                            <label for="profileImageInput" class="image-edit-icon">📷</label>
-                            <input type="file" id="profileImageInput" accept="image/*" hidden>
+                            <img id="profileImage" class="dropdown-avatar">
+                            <label for="profileImageInput">📷</label>
+                            <input type="file" id="profileImageInput" hidden>
                         </div>
 
-                        <div class="user-info-brief">
-                            <input type="text" id="editName" class="editable-name" placeholder="Full Name">
-                            <p class="user-email" id="userEmail">user@email.com</p>
+                        <div>
+                            <input id="editName" placeholder="Full Name">
+                            <p id="userEmail">guest@oceanguard.com</p>
                         </div>
                     </div>
 
                     <div class="dropdown-divider"></div>
 
-                    <!-- EDITABLE CONTENT -->
+                    <!-- CONTENT -->
                     <div class="dropdown-content">
 
                         <div class="info-item">
-                            <span class="info-label">Email</span>
-                            <p id="dropdownEmail" class="info-value">user@email.com</p>
-                        </div>
-
-
-                        <div class="info-item">
-                            <span class="info-label">Date of Birth</span>
-                            <input type="date" id="editDOB" class="editable-input">
+                            <span>Email</span>
+                            <p id="dropdownEmail">guest@oceanguard.com</p>
                         </div>
 
                         <div class="info-item">
-                            <span class="info-label">Location</span>
-                            <input type="text" id="editLocation" class="editable-input" placeholder="Your location">
+                            <span>Date of Birth</span>
+                            <input type="date" id="editDOB">
                         </div>
 
                         <div class="info-item">
-                            <span class="info-label">Bio</span>
-                            <textarea id="editBio" class="editable-textarea" placeholder="Short bio..."></textarea>
+                            <span>Location</span>
+                            <input type="text" id="editLocation">
+                        </div>
+
+                        <div class="info-item">
+                            <span>Bio</span>
+                            <textarea id="editBio"></textarea>
                         </div>
 
                     </div>
 
                     <div class="dropdown-divider"></div>
 
-                    <!-- ACTION BUTTONS -->
+                    <!-- ACTIONS -->
                     <div class="dropdown-actions">
-                        <button id="saveProfileBtn" class="dropdown-link save-profile">
-    <span id="saveText">💾 Save Changes</span>
-    <span id="saveLoader" class="loader" style="display:none;"></span>
-</button>
+                        <button id="saveProfileBtn">💾 Save Changes</button>
 
-                        <button class="dropdown-link logout-btn" id="logoutBtn">
-                            🚪 Sign Out
-                        </button>
+                        <!-- ❌ Removed logout dependency -->
+                        <!-- <button id="logoutBtn">🚪 Sign Out</button> -->
                     </div>
 
                 </div>
@@ -96,139 +88,60 @@
         </ul>
     </div>
 </header>
+
 <!-- ================= HERO ================= -->
-<section class="hero hero-image" id="home">
-    <div class="hero-grid-overlay"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
+<section class="hero">
+    <div class="container">
+        <h1>Detect Coastal Threats with <span class="highlight">AI Precision</span></h1>
+        <p>Analyze coastal images and reports in seconds.</p>
 
-    <div class="hero-content container">
-
-        <div class="hero-badge">
-            <span class="badge-dot">🛰️</span>
-            Real-time AI coastal threat intelligence
-        </div>
-
-        <h1>
-            Detect Coastal<br>
-            Threats with <span class="highlight">AI Precision.</span>
-        </h1>
-
-        <p>
-            Intelligent coastal risk assessment combining image analysis
-            and sea condition reports — from low advisory to critical alert.
-        </p>
-
-        <div class="hero-cta-group">
-            <a href="risk.html" class="btn primary">
-                Launch Risk Analyzer <span class="btn-arrow">→</span>
-            </a>
-            <a href="#features" class="btn secondary">Explore Platform</a>
-        </div>
-
+        <a href="risk.html" class="btn primary">
+            Launch Risk Analyzer →
+        </a>
     </div>
 </section>
 
 <!-- ================= FEATURES ================= -->
-<section id="features" class="features section">
+<section id="features" class="section">
     <div class="container">
-        <div class="section-header reveal">
-            <span class="section-label">Platform Capabilities</span>
-            <h2>Everything coastal intelligence needs</h2>
-            <p>Purpose-built AI tools that combine visual analysis with text interpretation for reliable threat detection.</p>
-        </div>
+        <h2>Features</h2>
 
-        <div class="feature-grid stagger">
+        <div class="feature-grid">
             <div class="feature-card">
-                <div class="feature-icon">🧠</div>
-                <h3>AI Image Evaluation</h3>
-                <p>Upload coastal images (JPG/PNG) to evaluate wave intensity, shoreline instability, and visible flood indicators.</p>
-                <a href="risk.html" class="feature-link">Try it now →</a>
+                <h3>AI Image Analysis</h3>
+                <p>Upload coastal images for risk detection.</p>
             </div>
 
             <div class="feature-card">
-                <div class="feature-icon">📝</div>
-                <h3>Text Risk Interpretation</h3>
-                <p>Provide descriptive sea condition reports. AI analyzes context, severity keywords, and hazard indicators in real time.</p>
-                <a href="risk.html" class="feature-link">Try it now →</a>
+                <h3>Text Analysis</h3>
+                <p>Analyze sea condition reports instantly.</p>
             </div>
 
             <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Risk Scoring</h3>
-                <p>Computes disaster classification ranging from Low to Critical.</p>
-                <a href="risk.html" class="feature-link">Try it now →</a>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">⚠️</div>
-                <h3>Cross-Modal Validation</h3>
-                <p>Detects contradictions between visual and textual inputs for more reliable coastal threat intelligence.</p>
-                <a href="risk.html" class="feature-link">Try it now →</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ================= HOW IT WORKS ================= -->
-<section id="how-it-works" class="how-it-works section">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-label">How It Works</span>
-            <h2>From upload to risk report in seconds</h2>
-            <p>A streamlined four-step pipeline that turns raw coastal data into actionable threat intelligence.</p>
-        </div>
-
-        <div class="steps stagger">
-            <div class="step">
-                <div class="step-number">01</div>
-                <h3>Upload your data</h3>
-                <p>Submit a coastal image alongside a sea condition report for dual-channel analysis.</p>
-            </div>
-
-            <div class="step">
-                <div class="step-number">02</div>
-                <h3>Backend processing</h3>
-                <p>Express backend validates and processes the multipart data securely before AI evaluation.</p>
-            </div>
-
-            <div class="step">
-                <div class="step-number">03</div>
-                <h3>AI risk evaluation</h3>
-                <p>The AI module evaluates wave severity, flood probability, and cross-modal signal consistency.</p>
-            </div>
-
-            <div class="step">
-                <div class="step-number">04</div>
-                <h3>Risk dashboard</h3>
-                <p>Final classification and detailed metrics are rendered on an interactive risk dashboard.</p>
+                <h3>Risk Score</h3>
+                <p>Get classification from Low to Critical.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ================= CTA ================= -->
-<section class="cta" id="cta">
-    <div class="cta-inner">
-        <span class="section-label">Get started today</span>
+<section class="cta">
+    <div class="container">
         <h2>Start Monitoring Coastal Threats</h2>
-        <p>Secure. Scalable. Production-ready architecture built for real-world coastal disaster response.</p>
-        <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;">
-            <a href="subscription.html" class="btn primary"> view subscription Plans<span class="btn-arrow">→</span></a>
-            <a href="#features" class="btn secondary">Learn more</a>
-        </div>
+        <a href="risk.html" class="btn primary">Start Now →</a>
     </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer>
     <div class="container">
-        <p>© 2026 OceanGuard. All rights reserved. · AI Coastal Risk Monitoring Platform</p>
+        <p>© 2026 OceanGuard</p>
     </div>
 </footer>
 
-<!-- External JS -->
-<script type="module" src="script_test.js"></script>
+<!-- ✅ IMPORTANT: REMOVE module -->
+<script src="script_test.js"></script>
 
 </body>
 </html>
