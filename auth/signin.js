@@ -127,7 +127,7 @@ async function sendTokenToBackend(idToken) {
         console.log("Backend response:", data);
 
         // ✅ SUCCESS REDIRECT
-        window.location.href = "https://ocean-guard.netlify.app/";
+        window.location.href = "../index.html";
 
     } catch (error) {
         console.error("Backend Auth Error:", error);

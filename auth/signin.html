@@ -4,33 +4,41 @@
     <meta charset="UTF-8">
     <title>OceanGuard | Secure Sign In</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI Coastal Intelligence Platform - Real-time disaster monitoring powered by predictive analytics">
+    <meta name="description" content="AI Coastal Intelligence Platform">
+
     <link rel="stylesheet" href="signin.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🌊</text></svg>">
-    
-    <!-- Firebase SDK (v9 modular) -->
-    <script type="module" src="signin.js" defer></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+    <text y='75' font-size='75'>🌊</text></svg>">
+
+    <!-- ✅ IMPORTANT: Module script (NO defer) -->
+    <script type="module" src="signin.js"></script>
 </head>
+
 <body>
 
 <div class="auth-container">
 
-    <!-- LEFT PANEL - BRANDING -->
+    <!-- LEFT PANEL -->
     <div class="auth-left">
         <div class="brand-content">
             <h1 class="logo">🌊 OceanGuard</h1>
             <h2>AI Coastal Intelligence Platform</h2>
-            <p>Real-time disaster monitoring powered by predictive analytics. Protect what matters with cutting-edge technology.</p>
+            <p>
+                Real-time disaster monitoring powered by predictive analytics.
+            </p>
         </div>
     </div>
 
-    <!-- RIGHT PANEL - AUTHENTICATION -->
+    <!-- RIGHT PANEL -->
     <div class="auth-right">
         <div class="auth-card">
             <h2>Welcome Back</h2>
 
-            <!-- Google Login Button -->
-            <button id="googleLogin" class="google-btn" title="Sign in with your Google account">
+            <!-- ✅ GOOGLE LOGIN -->
+            <button id="googleLogin" type="button" class="google-btn">
                 🔐 Continue with Google
             </button>
 
@@ -39,53 +47,50 @@
                 <span>OR</span>
             </div>
 
-            <!-- Phone Authentication Section -->
-            <section class="phone-section" aria-label="Phone authentication">
-                
-                <!-- Phone Input & OTP Request -->
+            <!-- PHONE AUTH -->
+            <section class="phone-section">
+
+                <!-- PHONE INPUT -->
                 <div id="phoneInputContainer">
-                    <label for="phoneNumber" style="display: block; margin-bottom: 6px; font-size: 0.9rem; font-weight: 500; color: var(--text-secondary);">
-                        Phone Number
-                    </label>
+                    <label for="phoneNumber">Phone Number</label>
+
                     <input 
-                        type="text" 
+                        type="tel" 
                         id="phoneNumber" 
-                        placeholder="+91 9876543210"
-                        inputmode="tel"
-                        aria-label="Phone number"
+                        placeholder="+919876543210"
                     >
-                    <button id="sendOtp" aria-label="Send OTP to your phone">
+
+                    <button id="sendOtp" type="button">
                         Send OTP
                     </button>
                 </div>
 
-                <!-- OTP Input & Verification -->
+                <!-- OTP -->
                 <div id="otpContainer" class="hidden">
-                    <label for="otpCode" style="display: block; margin-bottom: 6px; font-size: 0.9rem; font-weight: 500; color: var(--text-secondary);">
-                        OTP Code
-                    </label>
+                    <label for="otpCode">OTP Code</label>
+
                     <input 
                         type="text" 
                         id="otpCode" 
-                        placeholder="Enter 6-digit OTP"
-                        inputmode="numeric"
+                        placeholder="Enter OTP"
                         maxlength="6"
-                        aria-label="OTP verification code"
                     >
-                    <button id="verifyOtp" aria-label="Verify OTP and continue">
+
+                    <button id="verifyOtp" type="button">
                         Verify & Continue
                     </button>
                 </div>
+
             </section>
 
-            <!-- Error Message Display -->
-            <div id="errorMessage" class="error" role="alert"></div>
+            <!-- ERROR -->
+            <div id="errorMessage" class="error"></div>
 
-            <!-- Security Note -->
-            <p class="secure-note">🔒 Secured by Firebase Authentication</p>
+            <!-- NOTE -->
+            <p class="secure-note">🔒 Secured by Firebase</p>
 
-            <!-- reCAPTCHA Container -->
-            <div id="recaptcha-container" role="complementary" aria-label="reCAPTCHA verification"></div>
+            <!-- RECAPTCHA -->
+            <div id="recaptcha-container"></div>
 
         </div>
     </div>
