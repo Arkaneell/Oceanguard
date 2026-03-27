@@ -9,7 +9,7 @@ import {
 
 /* 🔥 REPLACE WITH YOUR FIREBASE CONFIG */
 const firebaseConfig = {
-    apiKey: process.env-auth.FIREBASE_API_KEY,
+    apiKey: "AIzaSyANirGdTbqkaZiqezn8weXqODe49GlNKps",
     authDomain: "oceanguard1.firebaseapp.com",
     projectId: "oceanguard1",
 };
