@@ -323,7 +323,7 @@ Together, we can build safer coastal communities through intelligent technology.
 *Complete system workflow from user input to emergency alert*
 
 ### Model Architecture
-![Deep Learning Pipeline](docs/images/model_architecture.png)
+![Deep Learning Pipeline](docs/images/model_architecture.jpg)
 *Multi-modal fusion architecture with visual and text encoders*
 
 ### Dashboard Preview
