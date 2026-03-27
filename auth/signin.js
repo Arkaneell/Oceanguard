@@ -32,17 +32,25 @@ const errorMessage = document.getElementById("errorMessage");
 
 // ================= GOOGLE LOGIN =================
 if (googleBtn) {
-    googleBtn.addEventListener("click", async () => {
+    googleBtn.addEventListener("click", async (e) => {
+        e.preventDefault(); // 🔥 FIX: stop page reload
+
+        console.log("Google login clicked");
+
         try {
             const provider = new GoogleAuthProvider();
             const result = await signInWithPopup(auth, provider);
 
+            console.log("User:", result.user);
+
             const idToken = await result.user.getIdToken(true);
+            console.log("Token received");
+
             await sendTokenToBackend(idToken);
 
         } catch (error) {
             console.error("Google Login Error:", error);
-            errorMessage.textContent = error.message;
+            if (errorMessage) errorMessage.textContent = error.message;
         }
     });
 }
@@ -54,7 +62,9 @@ if (sendOtpBtn && verifyOtpBtn) {
         size: 'invisible'
     }, auth);
 
-    sendOtpBtn.addEventListener("click", async () => {
+    sendOtpBtn.addEventListener("click", async (e) => {
+        e.preventDefault(); // 🔥 FIX
+
         try {
             if (!phoneInput.value) {
                 errorMessage.textContent = "Enter phone number";
@@ -72,11 +82,13 @@ if (sendOtpBtn && verifyOtpBtn) {
 
         } catch (error) {
             console.error("OTP Send Error:", error);
-            errorMessage.textContent = error.message;
+            if (errorMessage) errorMessage.textContent = error.message;
         }
     });
 
-    verifyOtpBtn.addEventListener("click", async () => {
+    verifyOtpBtn.addEventListener("click", async (e) => {
+        e.preventDefault(); // 🔥 FIX
+
         try {
             if (!otpInput.value) {
                 errorMessage.textContent = "Enter OTP";
@@ -90,7 +102,7 @@ if (sendOtpBtn && verifyOtpBtn) {
 
         } catch (error) {
             console.error("OTP Verify Error:", error);
-            errorMessage.textContent = "Invalid OTP";
+            if (errorMessage) errorMessage.textContent = "Invalid OTP";
         }
     });
 }
@@ -98,6 +110,8 @@ if (sendOtpBtn && verifyOtpBtn) {
 // ================= SEND TOKEN =================
 async function sendTokenToBackend(idToken) {
     try {
+        console.log("Sending token to backend...");
+
         const res = await fetch(`${API_URL}/api/auth/verify`, {
             method: "POST",
             headers: {
@@ -112,11 +126,13 @@ async function sendTokenToBackend(idToken) {
         const data = await res.json();
         console.log("Backend response:", data);
 
-        // ✅ Redirect after login
+        // ✅ SUCCESS REDIRECT
         window.location.href = "https://ocean-guard.netlify.app/";
 
     } catch (error) {
         console.error("Backend Auth Error:", error);
-        errorMessage.textContent = "Authentication failed. Try again.";
+        if (errorMessage) {
+            errorMessage.textContent = "Authentication failed. Try again.";
+        }
     }
 }
